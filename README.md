@@ -1,5 +1,7 @@
 # Laravel Boolfolio - Base
 
+Creiamo con Laravel il nostro sistema di gestione del nostro Portfolio di progetti.
+
 ## Todo 15/06
 
 Iniziamo un nuovo progetto usando laravel breeze ed il pacchetto Laravel 9 Preset con autenticazione.
