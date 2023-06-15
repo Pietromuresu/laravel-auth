@@ -13,7 +13,7 @@ composer require laravel/breeze --dev
 php artisan breeze:install
 ```
 
-Preset Laravel + Scss
+Preset Laravel + Scss + Bootstrap
 ```
 composer require pacificdev/laravel_9_preset
 
