@@ -1,1 +1,10 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+
+aside{
+    height: calc(100vh - 60px);
+    div{
+        height: calc(100vh - 60px);
+
+    }
+}

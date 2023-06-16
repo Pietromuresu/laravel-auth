@@ -20,7 +20,7 @@
                         <a class="nav-link" target="_blank" href="{{ route('home') }}"> Guest Home </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('admin.index')}}">All projects</a>
+                        <a class="nav-link" href="{{route('admin.projects.index')}}">All projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"  href="{{url('/admin') }}">{{ __('Home') }}</a>
