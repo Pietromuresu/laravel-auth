@@ -44,7 +44,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
+                            <a class="nav-link" target="_blank" href="{{ route('home') }}"> Guest Home </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">All projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"  href="{{url('/admin') }}">{{ __('Home') }}</a>
                         </li>
                     </ul>
 
