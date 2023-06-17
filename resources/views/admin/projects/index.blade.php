@@ -28,7 +28,7 @@
 
                 <td>
                     <a href="{{route('admin.projects.show', $project)}}" class="btn btn-primary"><i class="fa-solid fa-info"></i></a>
-                    <a href="#" class="btn btn-primary">Modify</a>
+                    <a href="{{route('admin.projects.edit', $project)}}" class="btn btn-primary">Modify</a>
                     <a href="#" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
