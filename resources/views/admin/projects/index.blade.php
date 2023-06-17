@@ -29,7 +29,16 @@
                 <td>
                     <a href="{{route('admin.projects.show', $project)}}" class="btn btn-primary"><i class="fa-solid fa-info"></i></a>
                     <a href="{{route('admin.projects.edit', $project)}}" class="btn btn-primary">Modify</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
+                    <form
+                      class="d-inline"
+                      action="{{route('admin.projects.destroy', $project)}}"
+                      method="POST"
+                      onsubmit="return confirm('If you confirm, {{$project->name}} will be deleted forever')">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Delete</button>
+
+                    </form>
                 </td>
             </tr>
             @endforeach
