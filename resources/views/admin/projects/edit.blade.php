@@ -43,9 +43,16 @@
             {{--Description text input --}}
 
             <label for="description" class="form-label"><strong>Edit Description</strong></label>
-            <div class="input-group">
+
                 <textarea type="text" class="form-control"  id="description"  name="description"  aria-describedby="basic-addon3 basic-addon4">{{old('description', $project->description)}}</textarea>
-            </div>
+                <script>
+                    ClassicEditor
+                        .create( document.querySelector( '#description' ) )
+                        .catch( error => {
+                            console.error( error );
+                        } );
+                </script>
+
         </div>
         <div class="mb-3">
             {{--Technologies text input --}}
@@ -82,7 +89,7 @@
         <div class="text-center mt-5">
             <button type="submit" class="btn btn-dark">
 
-                Add New Project
+                Modify "{{$project->name}}"
             </button>
         </div>
     </form>

@@ -39,17 +39,25 @@
             {{--Description text input --}}
 
             <label for="description" class="form-label"><strong>Add a Description</strong></label>
-            <div class="input-group">
-                <input type="text" class="form-control"  id="description"  name="description"  aria-describedby="basic-addon3 basic-addon4">
-            </div>
+
+                <textarea type="text" class="form-control"  id="description"  name="description"  aria-describedby="basic-addon3 basic-addon4"></textarea>
+
+                <script>
+                    ClassicEditor
+                        .create( document.querySelector( '#description' ) )
+                        .catch( error => {
+                            console.error( error );
+                        } );
+                </script>
         </div>
         <div class="mb-3">
             {{--Technologies text input --}}
 
             <label for="technologies" class="form-label"><strong>List used Technologies</strong></label>
-            <div class="input-group">
+            <div class="input-group" id="editor">
                 <input type="text" class="form-control"  id="technologies" name="technologies"  aria-describedby="basic-addon3 basic-addon4">
             </div>
+
         </div>
         <div class="mb-3">
             {{-- team members text input --}}

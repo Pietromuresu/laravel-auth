@@ -20,6 +20,11 @@
 
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
+
+
+    <!-- CKeditor -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+
 </head>
 
 <body>
@@ -41,6 +46,8 @@
 
 
     </div>
+
+
 </body>
 
 </html>
