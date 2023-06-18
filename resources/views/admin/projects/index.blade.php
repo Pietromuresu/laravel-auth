@@ -20,12 +20,16 @@
     </div>
 
 
-    <div class="pm-card-wrapper">
+    <div class="pm-card-wrapper justify-content-center">
         @foreach ($projects as $project)
 
             @include('admin.projects.partials.card', $project)
 
         @endforeach
+    </div>
+
+    <div class="mt-5 d-flex justify-content-center">
+        {{$projects->links()}}
     </div>
 
 

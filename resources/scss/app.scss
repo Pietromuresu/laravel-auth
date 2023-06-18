@@ -18,7 +18,6 @@ main{
 
 }
 
-
 .pm-buttons-container{
 
     .btn{
@@ -28,4 +27,19 @@ main{
 
         }
     }
+}
+
+
+// Overwriting Paginator Nav
+.page-item .page-link {
+    z-index: 1;
+    color: black;
+
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: black;
+    background-color: #74A2A5;
+    border-color: #74A2A5;
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 use App\Http\Requests\ProjectRequest;
 use App\Models\Project;
 class ProjectController extends Controller
@@ -15,7 +16,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::orderBy('id', 'desc')
+                            ->paginate(8);
         return view('admin.projects.index', compact('projects'));
     }
 
