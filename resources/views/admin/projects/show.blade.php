@@ -20,6 +20,25 @@
     <h1 class="text-danger text-center mt-5">Work in progress</h1>
     @endif
 
+    <div class="pm-buttons-container text-center mt-5">
+        <div class="btn pm-bg-dark ">
+            <a class="text-white text-decoration-none" href="{{route('admin.projects.edit', $project)}}">
+                Modify
+            </a>
+        </div>
+        <div class="btn pm-bg-red ms-3" >
+            <form
+              method="POST"
+              action="{{route('admin.projects.destroy', $project)}}"
+              onsubmit="return confirm('If you confirm, {{ $project->name }} will be deleted forever')">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="bg-transparent border-0 p-0 text-white">
+                    Delete
+                </button>
+            </form>
+        </div>
+    </div>
 
 </div>
 @endsection

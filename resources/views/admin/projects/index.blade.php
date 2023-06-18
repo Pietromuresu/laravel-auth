@@ -9,7 +9,16 @@
         </div>
     @endif
 
-    <h1 class="my-4">All projects</h1>
+    <div class="pm-allprojects-heading d-flex justify-content-between container">
+        <h1 class="my-4">All projects  </h1>
+        <h1 class="text-center align-self-center mx-4 btn-dark btn mt-3">
+            <a class="text-white text-decoration-none" href="{{route('admin.projects.create')}}">
+                <i class="fa-solid fa-plus"></i>
+                Add New
+            </a>
+        </h1>
+    </div>
+
 
     <div class="pm-card-wrapper">
         @foreach ($projects as $project)
