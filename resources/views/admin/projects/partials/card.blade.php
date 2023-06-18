@@ -1,6 +1,6 @@
 
-<a class="pm-card-link" href="{{route('admin.projects.show', $project)}}">
-    <div class="pm-card text-black  ">
+<div class="pm-card text-black  ">
+        <a class="text-decoration-none" href="{{route('admin.projects.show', $project)}}">
         <div class="pm-bg-light-green">
 
         </div>
@@ -12,10 +12,14 @@
         </div>
 
 
-        <p class="mt-4">{{$project->purpose    }}</p>
-        <h6 class="mt-4 text-dark">Project Manager: {{$project->team_members}}</h6>
+        <p class="mt-4">{{$project->purpose}}</p>
+        <h6 class="mt-4 text-dark">Project Manager: {{$project->project_manager}}</h6>
+        <div class="">
+            <h6 class="mt-4 text-dark d-inline">Git Repo: </h6>
+            <a target="_blank" href="{{$project->repository}}"> Link</a>
+        </div>
         <p class="mt-4">{!! $project->is_done ? 'Completed <i class="fa-solid fa-check"></i>' : 'In progress... ' !!}</p>
 
+    </a>
     </div>
 
-</a>
