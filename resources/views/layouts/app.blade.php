@@ -18,7 +18,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <!-- Usando Vite -->
+    <!-- Use Vite -->
     @vite(['resources/js/app.js'])
 
 
@@ -34,11 +34,12 @@
 
 
         @auth
-            <div class="">
+            <div>
                 @include('layouts.partials.aside')
             </div>
         @endauth
-        <main class="">
+
+        <main>
 
             <div class="col overflow-auto">
                 @yield('content')

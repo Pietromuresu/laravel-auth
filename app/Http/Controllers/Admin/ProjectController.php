@@ -42,6 +42,7 @@ class ProjectController extends Controller
         $new_project = new Project();
         $new_project->slug = Project::generateSlug($form_data['name']);
         $new_project->is_done = $form_data['is_done'];
+
         $new_project->fill($form_data);
         $new_project->save();
 
@@ -56,7 +57,6 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-
         return view('admin.projects.show', compact('project'));
     }
 
@@ -69,7 +69,6 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         return view('admin.projects.edit', compact('project'));
-
     }
 
     /**
@@ -89,10 +88,7 @@ class ProjectController extends Controller
             $form_data['slug'] = $project->slug;
         }
 
-
         $project->update($form_data);
-
-
 
         return redirect()->route('admin.projects.show', compact('project'));
     }

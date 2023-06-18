@@ -10,6 +10,7 @@ class Project extends Model
 {
     use HasFactory;
 
+    // All fields to be filled with fill() method
     protected $fillable = [
         "name",
         "purpose",
@@ -21,11 +22,16 @@ class Project extends Model
         "is_done",
     ];
 
+    // Generate slug using the name of the Project is beeing created or updated
+    // use Str to generate the string
+
     public static function generateSlug($str){
         $slug = Str::slug($str, '-');
         $first_slug = $slug;
         $is_slug_used = Project::where('slug', $slug)->first();
         $counter =  1;
+
+        // While the slug is already in the database add an ascendent suffix using a counter
         while($is_slug_used){
             $slug = $first_slug . $counter;
             $is_slug_used = Project::where('slug', $slug)->first();

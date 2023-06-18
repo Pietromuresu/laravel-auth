@@ -4,12 +4,16 @@
 
 <div class="container w-75">
     @if($errors->any())
-        <h3>Ops, pay attention to these fields</h3>
+        <h3>
+            Ops, pay attention to these fields
+        </h3>
+
         <div class="alert alert-danger" role="alert">
             <ul>
                 @foreach ($errors->all() as $error)
-
-                <li>{{$error}}</li>
+                    <li>
+                        {{$error}}
+                    </li>
                 @endforeach
             </ul>
         </div>
@@ -17,30 +21,52 @@
     @endif
 
     <form class="mt-5" action="{{route('admin.projects.store')}}" method="POST">
+    @csrf
 
-        @csrf
         <div class="mb-3">
             {{--Name text input --}}
 
-            <label for="name" class="form-label"><strong>Add a Name</strong></label>
+            <label for="name" class="form-label">
+                <strong>Add a Name</strong>
+            </label>
             <div class="input-group">
-                <input   type="text" class="form-control"  id="name" name="name" aria-describedby="basic-addon3 basic-addon4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  aria-describedby="basic-addon3 basic-addon4">
             </div>
         </div>
         <div class="mb-3">
             {{--Purpose text input --}}
 
-            <label for="purpose" class="form-label"><strong>Add a Purpose</strong></label>
+            <label for="purpose" class="form-label">
+                <strong>Add a Purpose</strong>
+            </label>
             <div class="input-group">
-                <input  type="text" class="form-control"  id="purpose" name="purpose">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="purpose"
+                  name="purpose">
             </div>
         </div>
         <div class="mb-3">
             {{--Description text input --}}
 
-            <label for="description" class="form-label"><strong>Add a Description</strong></label>
+            <label for="description" class="form-label">
+                <strong>Add a Description</strong>
+            </label>
 
-                <textarea type="text" class="form-control"  id="description"  name="description"  aria-describedby="basic-addon3 basic-addon4"></textarea>
+                <textarea
+                  type="text"
+                  class="form-control"
+                  id="description"
+                  name="description"
+                  aria-describedby="basic-addon3 basic-addon4">
+
+                </textarea>
 
                 <script>
                     ClassicEditor
@@ -53,56 +79,100 @@
         <div class="mb-3">
             {{--Technologies text input --}}
 
-            <label for="technologies" class="form-label"><strong>List used Technologies</strong></label>
+            <label for="technologies" class="form-label">
+                <strong>List used Technologies</strong>
+            </label>
             <div class="input-group" id="editor">
-                <input type="text" class="form-control"  id="technologies" name="technologies"  aria-describedby="basic-addon3 basic-addon4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="technologies"
+                  name="technologies"
+                  aria-describedby="basic-addon3 basic-addon4">
             </div>
 
         </div>
         <div class="mb-3">
             {{--Repository text input --}}
 
-            <label for="repository" class="form-label"><strong>Add Repository</strong></label>
+            <label for="repository" class="form-label">
+                <strong>Add Repository</strong>
+            </label>
             <div class="input-group" id="editor">
-                <input type="text" class="form-control"  id="repository" name="repository"  aria-describedby="basic-addon3 basic-addon4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="repository"
+                  name="repository"
+                  aria-describedby="basic-addon3 basic-addon4">
             </div>
 
         </div>
         <div class="mb-3">
             {{-- team members text input --}}
 
-            <label for="team_members" class="form-label"><strong>List team members</strong></label>
+            <label for="team_members" class="form-label">
+                <strong>List team members</strong>
+            </label>
             <div class="input-group">
-                <input type="text" class="form-control"  id="team_members" name="team_members" aria-describedby="basic-addon3 basic-addon4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="team_members"
+                  name="team_members"
+                  aria-describedby="basic-addon3 basic-addon4">
             </div>
         </div>
         <div class="mb-3">
             {{-- Project Manager text input --}}
 
-            <label for="project_manager" class="form-label"><strong>Add Project Manager</strong></label>
+            <label for="project_manager" class="form-label">
+                <strong>Add Project Manager</strong>
+            </label>
             <div class="input-group">
-                <input type="text" class="form-control"  id="project_manager" name="project_manager" aria-describedby="basic-addon3 basic-addon4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="project_manager"
+                  name="project_manager"
+                  aria-describedby="basic-addon3 basic-addon4">
             </div>
         </div>
         <div class="mb-3">
             {{-- is_done checkbox --}}
-            <label for="is_done" class="form-label"><strong>Completed</strong></label>
-            <div class="input-group">
-                <label class="mx-2" for="is_done">Yes</label>
 
-                    <input type="checkbox" value="1" id="is_done" name="is_done"  aria-describedby="basic-addon3 basic-addon4">
+            <label for="is_done" class="form-label">
+                <strong>Completed</strong>
+            </label>
+            <div class="input-group">
+                <label class="mx-2" for="is_done">
+                    Yes
+                </label>
+
+                <input
+                  type="checkbox"
+                  value="1"
+                  id="is_done"
+                  name="is_done"
+                  aria-describedby="basic-addon3 basic-addon4">
             </div>
             <div class="input-group">
 
-                <label class="mx-2" for="is_done">No</label>
+                <label class="mx-2" for="is_done">
+                    No
+                </label>
 
-                <input type="checkbox" value="0" id="is_done" name="is_done"  aria-describedby="basic-addon3 basic-addon4">
+                <input
+                  type="checkbox"
+                  value="0"
+                  id="is_done"
+                  name="is_done"
+                  aria-describedby="basic-addon3 basic-addon4">
             </div>
         </div>
 
         <div class="text-center mt-5">
             <button type="submit" class="btn btn-dark">
-
                 Add New Project
             </button>
         </div>

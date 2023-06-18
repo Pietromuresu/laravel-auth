@@ -1,5 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
-@import 'utils.scss';
+@import 'colorUtils.scss';
 @import 'card.scss';
 
 
@@ -13,16 +13,19 @@ aside{
 }
 
 main{
-
     margin-top: 60px;
     margin-left: 260px;
+
 }
 
 
 .pm-buttons-container{
+
     .btn{
+
         &:hover{
             background-color: #74A2A5;
+
         }
     }
 }
