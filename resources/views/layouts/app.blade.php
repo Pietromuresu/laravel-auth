@@ -28,15 +28,17 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" class="position-relative">
 
         @include('layouts.partials.header')
 
 
-        <main class="row">
-            <div class="col-2">
+        @auth
+            <div class="">
                 @include('layouts.partials.aside')
             </div>
+        @endauth
+        <main class="">
 
             <div class="col overflow-auto">
                 @yield('content')

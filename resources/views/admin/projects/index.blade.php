@@ -3,49 +3,25 @@
 @section('content')
 <div class="container">
 
-    <table class="table table-striped mt-5">
-        <thead>
-          <tr>
-            <th scope="col">#ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Team</th>
-            <th scope="col">Is done</th>
-            <th scope="col">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-            @foreach ($projects as $project)
+    @if (session('deleted'))
+        <div class="alert alert-success mt-3">
+            {!! session('deleted') !!}
+        </div>
+    @endif
 
-            <tr>
-                <th scope="row">{{$project->id}}</th>
-                <td>{{$project->name}}</td>
-                <td>{{$project->team_members}}</td>
-                @if($project->is_done)
-                    <td>Yes</td>
-                @else
-                    <td>No</td>
-                @endif
+    <h1 class="my-4">All projects</h1>
 
-                <td>
-                    <a href="{{route('admin.projects.show', $project)}}" class="btn btn-primary"><i class="fa-solid fa-info"></i></a>
-                    <a href="{{route('admin.projects.edit', $project)}}" class="btn btn-primary">Modify</a>
-                    <form
-                      class="d-inline"
-                      action="{{route('admin.projects.destroy', $project)}}"
-                      method="POST"
-                      onsubmit="return confirm('If you confirm, {{$project->name}} will be deleted forever')">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+    <div class="pm-card-wrapper">
+        @foreach ($projects as $project)
 
-                    </form>
-                </td>
-            </tr>
-            @endforeach
+            @include('admin.projects.partials.card', $project)
 
-        </tbody>
-      </table>
+        @endforeach
+    </div>
 
-</div>
+
+
+
+    </div>
 @endsection
 

@@ -1,4 +1,4 @@
-<header>
+<header class="fixed-top">
 
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
@@ -19,9 +19,11 @@
                     <li class="nav-item">
                         <a class="nav-link" target="_blank" href="{{ route('home') }}"> Guest Home </a>
                     </li>
+                    @auth
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('admin.projects.index')}}">All projects</a>
                     </li>
+                    @endauth
                     <li class="nav-item">
                         <a class="nav-link"  href="{{url('/admin') }}">{{ __('Home') }}</a>
                     </li>
@@ -45,19 +47,7 @@
                             {{ Auth::user()->name }}
                         </a>
                     </li>
-                    <li class=" btn btn-dark ms-3">
 
-
-                        <a class="text-white text-decoration-none "  href="{{ route('logout') }}" onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-
-                    </li>
                     @endguest
                 </ul>
             </div>

@@ -1,10 +1,19 @@
 @import '~bootstrap/scss/bootstrap';
+@import 'utils.scss';
+@import 'card.scss';
 
 
 aside{
     height: calc(100vh - 60px);
-    div{
-        height: calc(100vh - 60px);
+    width: 250px;
+    position: fixed;
+    left: 0;
+    top: 55px;
 
-    }
+}
+
+main{
+
+    margin-top: 60px;
+    margin-left: 260px;
 }
