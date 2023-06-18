@@ -2,23 +2,43 @@
 
 @section('content')
 <div class="container mt-5">
+    <div class="pm-show-heading d-flex justify-content-between">
 
-    <h1 class="mb-5"> {{ $project->name }}</h1>
+        <h1 class="mb-5"> {{ $project->name }}</h1>
+        @if ($project->is_done )
+        <h4 class="text-success text-center mx-5 mt-3">
+            <i class="fa-solid fa-check"></i>
+            Completed
+        </h4>
+        @else
+        <h4 class="text-danger text-center mx-5 mt-3">
+            <i class="fa-sharp fa-solid fa-record-vinyl" style="color: #dd2727;"></i>
+            Work in progress...
+        </h4>
+        @endif
+    </div>
+
+
+    <h4 class="mt-4">Git Repo <i class="fa-brands fa-github"></i>: </h4>
+    <p>
+        <a target="_blank" href="{{ $project->repository }}">
+            {{ $project->repository }}
+        </a>
+    </p>
+    <h4 class="mt-4">Project Manager:</h4>
+    <p> {{ $project->project_manager }}</p>
 
     <h3 class="mt-4">Purpose: </h3>
     <p>{{ $project->purpose }}</p>
-    <br>
+
+
     <h3 class="mt-4">Team:</h3>
     <p> {{ $project->team_members }}</p>
-    <h3 class="mt-4">Description:</h3>
-    <p> {!!$project->description!!}</p>
     <h3 class="mt-4">Technologies:</h3>
     <p> {{ $project->technologies }}</p>
-    @if ($project->is_done )
-    <h1 class="text-success text-center mt-5">Ended</h1>
-    @else
-    <h1 class="text-danger text-center mt-5">Work in progress</h1>
-    @endif
+    <h3 class="mt-4">Description:</h3>
+    <p> {!!$project->description!!}</p>
+
 
     <div class="pm-buttons-container text-center mt-5">
         <div class="btn pm-bg-dark ">

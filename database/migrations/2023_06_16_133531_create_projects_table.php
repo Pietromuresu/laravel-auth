@@ -18,7 +18,9 @@ return new class extends Migration
             $table->string('name', 50);
             $table->string('slug', 50)->unique();
             $table->string('purpose');
-            $table->string('team_members', 50)->nullable();
+            $table->text('team_members')->nullable();
+            $table->string('project_manager', 50)->nullable();
+            $table->string('repository');
             $table->text('description');
             $table->string('technologies');
             $table->boolean('is_done')->default('0');

@@ -28,6 +28,8 @@ class ProjectRequest extends FormRequest
             "purpose" => "required|max:255|min:10",
             "description" => "required|min:20",
             "technologies" => "required|max:255|min:3",
+            "repository" => "required|max:255|min:3",
+            "project_manager" => "max:50",
         ];
     }
 
@@ -44,7 +46,11 @@ class ProjectRequest extends FormRequest
             "description.min" => "Minimum length for Description is :min",
             "technologies.required" => "Technologies is required",
             "technologies.max" => "Max length for Technologies is :max",
-            "technologies.min" => "Minimum length for Technologies is :min"
+            "technologies.min" => "Minimum length for Technologies is :min",
+            "project_manager.max" => "Max length for Project manager is :max",
+            "repository.required" => "Repository is required",
+            "repository.max" => "Max length for Repository is :max",
+            "repository.min" => "Minimum length for Repository is :min",
         ];
     }
 }

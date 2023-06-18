@@ -16,6 +16,8 @@ class Project extends Model
         "team_members",
         "description",
         "technologies",
+        "project_manager",
+        "repository",
         "is_done",
     ];
 

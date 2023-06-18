@@ -60,11 +60,28 @@
 
         </div>
         <div class="mb-3">
+            {{--Repository text input --}}
+
+            <label for="repository" class="form-label"><strong>Add Repository</strong></label>
+            <div class="input-group" id="editor">
+                <input type="text" class="form-control"  id="repository" name="repository"  aria-describedby="basic-addon3 basic-addon4">
+            </div>
+
+        </div>
+        <div class="mb-3">
             {{-- team members text input --}}
 
             <label for="team_members" class="form-label"><strong>List team members</strong></label>
             <div class="input-group">
                 <input type="text" class="form-control"  id="team_members" name="team_members" aria-describedby="basic-addon3 basic-addon4">
+            </div>
+        </div>
+        <div class="mb-3">
+            {{-- Project Manager text input --}}
+
+            <label for="project_manager" class="form-label"><strong>Add Project Manager</strong></label>
+            <div class="input-group">
+                <input type="text" class="form-control"  id="project_manager" name="project_manager" aria-describedby="basic-addon3 basic-addon4">
             </div>
         </div>
         <div class="mb-3">

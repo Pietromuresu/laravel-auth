@@ -25,6 +25,8 @@ class ProjectsTableSeeder extends Seeder
             $new_project->team_members = $faker->sentence(3);
             $new_project->description = $faker->text(1000);
             $new_project->technologies = $faker->sentence(10);
+            $new_project->repository = "https://github.com/Pietromuresu/laravel-auth";
+            $new_project->project_manager = $faker->name();
             $new_project->save();
 
         }
