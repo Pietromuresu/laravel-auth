@@ -28,7 +28,12 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create');
+        $method = "POST";
+        $route = route('admin.projects.store');
+        $project = null;
+        $action = "Add";
+
+        return view('admin.projects.create-edit', compact('project', 'method', 'route', 'action'));
     }
 
     /**
@@ -70,7 +75,10 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $method = "PUT";
+        $route = route('admin.projects.update' , $project);
+        $action = "Edit";
+        return view('admin.projects.create-edit', compact('project', 'method', 'route', 'action'));
     }
 
     /**

@@ -30,12 +30,12 @@
 <body>
     <div id="app" class="position-relative">
 
-        @include('layouts.partials.header')
+        @include('admin.partials.header')
 
 
         @auth
             <div>
-                @include('layouts.partials.aside')
+                @include('admin.partials.aside')
             </div>
         @endauth
 

@@ -21,20 +21,20 @@
     @endif
 
 
-    <form class="mt-5" action="{{route('admin.projects.update', $project)}}" method="POST">
+    <form class="mt-5" action="{{$route}}" method="POST">
 
         @csrf
-        @method('PUT')
+        @method($method)
 
         <div class="mb-3">
             {{--Name text input --}}
 
             <label for="name" class="form-label">
-                <strong>Edit Name</strong>
+                <strong>{{$action}} Name</strong>
             </label>
             <div class="input-group">
                 <input
-                  value="{{old('name', $project->name)}}"
+                  value="{{old('name', $project?->name)}}"
                   type="text"
                   class="form-control"
                   id="name"
@@ -46,11 +46,11 @@
             {{--Purpose text input --}}
 
             <label for="purpose" class="form-label">
-                <strong>Edit Purpose</strong>
+                <strong>{{$action}} Purpose</strong>
             </label>
             <div class="input-group">
                 <input
-                  value="{{old('purpose', $project->purpose)}}"
+                  value="{{old('purpose', $project?->purpose)}}"
                   type="text"
                   class="form-control"
                   id="purpose"
@@ -61,7 +61,7 @@
             {{--Description text input --}}
 
             <label for="description" class="form-label">
-                <strong>Edit Description</strong>
+                <strong>{{$action}} Description</strong>
             </label>
 
                 <textarea
@@ -71,7 +71,7 @@
                   name="description"
                   aria-describedby="basic-addon3 basic-addon4">
 
-                  {{old('description', $project->description)}}
+                  {{old('description', $project?->description)}}
 
                 </textarea>
                 <script>
@@ -87,11 +87,11 @@
             {{--Technologies text input --}}
 
             <label for="technologies" class="form-label">
-                <strong>Edit/Delete Technologies</strong>
+                <strong>{{$action}} Technologies</strong>
             </label>
             <div class="input-group">
                 <input
-                  value="{{old('technologies', $project->technologies)}}"
+                  value="{{old('technologies', $project?->technologies)}}"
                   type="text"
                   class="form-control"
                   id="technologies"
@@ -103,11 +103,11 @@
             {{--Repository text input --}}
 
             <label for="repository" class="form-label">
-                <strong>Edit Repository</strong>
+                <strong>{{$action}} Repository</strong>
             </label>
             <div class="input-group">
                 <input
-                  value="{{old('repository', $project->repository)}}"
+                  value="{{old('repository', $project?->repository)}}"
                   type="text"
                   class="form-control"
                   id="repository"
@@ -123,7 +123,7 @@
             </label>
             <div class="input-group">
                 <input
-                  value="{{old('team_members', $project->team_members)}}"
+                  value="{{old('team_members', $project?->team_members)}}"
                   type="text"
                   class="form-control"
                   id="team_members"
@@ -135,11 +135,11 @@
             {{-- Project Manager text input --}}
 
             <label for="project_manager" class="form-label">
-                <strong>Edit Project Manager</strong>
+                <strong>{{$action}} Project Manager</strong>
             </label>
             <div class="input-group">
                 <input
-                  value="{{old('project_manager', $project->project_manager)}}"
+                  value="{{old('project_manager', $project?->project_manager)}}"
                   type="text"
                   class="form-control"
                   id="project_manager"
@@ -182,7 +182,7 @@
         <div class="text-center mt-5">
             <button type="submit" class="btn btn-dark">
 
-                Modify "{{$project->name}}"
+                Modify "{{$project?->name}}"
             </button>
         </div>
     </form>

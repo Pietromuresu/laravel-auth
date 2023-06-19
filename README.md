@@ -20,3 +20,5 @@ composer require pacificdev/laravel_9_preset
 php artisan preset:ui bootstrap --auth
 ```
 Separamo gli ambienti Guest da quelli Admin per quanto riguarda stili, js, controller, viste e layout.
+
+

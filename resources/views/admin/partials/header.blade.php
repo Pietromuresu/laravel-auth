@@ -1,3 +1,4 @@
+@auth
 <header class="fixed-top">
 
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -19,11 +20,9 @@
                     <li class="nav-item">
                         <a class="nav-link" target="_blank" href="{{ route('home') }}"> Guest Home </a>
                     </li>
-                    @auth
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('admin.projects.index')}}">All projects</a>
                     </li>
-                    @endauth
                     <li class="nav-item">
                         <a class="nav-link"  href="{{url('/admin') }}">{{ __('Home') }}</a>
                     </li>
@@ -55,3 +54,4 @@
     </nav>
 
 </header>
+@endauth
