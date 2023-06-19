@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use App\Http\Requests\ProjectRequest;
@@ -50,6 +51,14 @@ class ProjectController extends Controller
         $new_project->slug = Project::generateSlug($form_data['name']);
         $new_project->is_done = $form_data['is_done'];
 
+        // If it finds a key named 'image' in $form_data it fills the fields
+        if(array_key_exists('image', $form_data)){
+            $form_data['original_img_name'] = $request->file('image')->getClientOriginalName();
+
+            $form_data['image_path'] = Storage::put('uploads', $form_data['image']);
+        }
+
+
         $new_project->fill($form_data);
         $new_project->save();
 
@@ -96,6 +105,17 @@ class ProjectController extends Controller
             $project->slug = Project::generateSlug($form_data['name']);
         }else{
             $form_data['slug'] = $project->slug;
+        }
+
+        if(array_key_exists('image', $form_data)){
+
+            if($project->image_path){
+                Storage::disk('public')->delete($project->image_path);
+            }
+
+            $form_data['original_img_name'] = $request->file('image')->getClientOriginalName();
+
+            $form_data['image_path'] = Storage::put('uploads', $form_data['image']);
         }
 
         $project->update($form_data);

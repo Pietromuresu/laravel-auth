@@ -20,6 +20,8 @@ class Project extends Model
         "project_manager",
         "repository",
         "is_done",
+        "original_img_name",
+        "image_path",
     ];
 
     // Generate slug using the name of the Project is beeing created or updated

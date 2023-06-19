@@ -33,6 +33,8 @@
             </a>
         </p>
 
+        <img  height="400px" src="{{asset('storage/' . $project->image_path)}}" alt="{{$project->name}} screenshot">
+
 
         <h4 class="mt-4">
             Project Manager:

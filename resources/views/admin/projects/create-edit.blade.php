@@ -21,7 +21,7 @@
     @endif
 
 
-    <form class="mt-5" action="{{$route}}" method="POST">
+    <form class="mt-5" action="{{$route}}" method="POST" enctype="multipart/form-data">
 
         @csrf
         @method($method)
@@ -144,6 +144,22 @@
                   class="form-control"
                   id="project_manager"
                   name="project_manager"
+                  aria-describedby="basic-addon3 basic-addon4">
+            </div>
+        </div>
+        <div class="mb-3">
+            {{-- Project Screen text input --}}
+
+            <label for="image" class="form-label">
+                <strong>{{$action}} Project Screenshot</strong>
+            </label>
+            <div class="input-group">
+                <input
+                  value="{{old('project_manager', $project?->project_manager)}}"
+                  type="file"
+                  class="form-control"
+                  id="image"
+                  name="image"
                   aria-describedby="basic-addon3 basic-addon4">
             </div>
         </div>
