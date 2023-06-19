@@ -73,7 +73,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        if($project->image_path !== null){
+        if($project->image_path){
             $img_path = $project->image_path;
 
         }else{
