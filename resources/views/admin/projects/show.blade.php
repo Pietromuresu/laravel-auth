@@ -33,7 +33,7 @@
             </a>
         </p>
 
-        <img  height="400px" src="{{asset('storage/' . $project->image_path)}}" alt="{{$project->name}} screenshot">
+        <img  height="400px" src="{{asset('storage/' . $img_path)}}" alt="{{$project->name}} screenshot">
 
 
         <h4 class="mt-4">

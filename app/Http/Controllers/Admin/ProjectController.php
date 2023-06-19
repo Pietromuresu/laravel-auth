@@ -73,7 +73,14 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('admin.projects.show', compact('project'));
+        if($project->image_path !== null){
+            $img_path = $project->image_path;
+
+        }else{
+            $img_path = 'uploads/default-image.jpeg';
+
+        }
+        return view('admin.projects.show', compact('project', 'img_path'));
     }
 
     /**
