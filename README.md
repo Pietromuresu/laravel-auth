@@ -22,3 +22,27 @@ php artisan preset:ui bootstrap --auth
 Separamo gli ambienti Guest da quelli Admin per quanto riguarda stili, js, controller, viste e layout.
 
 
+## Install
+
+Download zip or clone repository (if you clone it remember to delete the git file from the folder before start)
+
+- install all dependences
+
+```
+npm i 
+
+composer i 
+
+```
+
+- Duplicate the file  ".env.example" and rename it to ".env", then compile it with your db datas and generate key
+
+```
+php artisan key:generate
+```
+
+- Create a symbolic link to receve uploaded images
+
+```
+php artisan storage:link
+```

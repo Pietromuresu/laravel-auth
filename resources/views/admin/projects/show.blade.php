@@ -95,7 +95,7 @@
 
     </div>
 
-    <div class="pm-buttons-container text-center mt-5">
+    <div class="pm-buttons-container text-center my-5">
         <div class="btn pm-bg-dark ">
             <a
               class="text-white text-decoration-none"
