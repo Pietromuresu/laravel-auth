@@ -26,7 +26,7 @@ Separamo gli ambienti Guest da quelli Admin per quanto riguarda stili, js, contr
 
 Download zip or clone repository (if you clone it remember to delete the git file from the folder before start)
 
-- install all dependences
+- install all dependencies
 
 ```
 npm i 
