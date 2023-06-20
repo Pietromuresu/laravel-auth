@@ -33,7 +33,24 @@
             </a>
         </p>
 
-        <img  height="400px" src="{{asset('storage/' . $img_path)}}" alt="{{$project->name}} screenshot">
+
+        {{-- Project Screenshot --}}
+
+        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="">
+                <div class="">
+                    <img width="1000px"  src="{{asset('storage/' . $img_path)}}" alt="{{$project->name}} screenshot">
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <button class="border-0 bg-white" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+            <img  height="400px" src="{{asset('storage/' . $img_path)}}" alt="{{$project->name}} screenshot">
+          </button>
+
 
 
         <h4 class="mt-4">

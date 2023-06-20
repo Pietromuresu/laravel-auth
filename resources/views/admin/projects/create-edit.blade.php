@@ -147,13 +147,13 @@
                   aria-describedby="basic-addon3 basic-addon4">
             </div>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 pm-image-input">
             {{-- Project Screen text input --}}
 
             <label for="image" class="form-label">
                 <strong>{{$action}} Project Screenshot</strong>
             </label>
-            <div class="input-group">
+
                 <input
                   value="{{old('project_manager', $project?->project_manager)}}"
                   type="file"
@@ -161,7 +161,7 @@
                   id="image"
                   name="image"
                   aria-describedby="basic-addon3 basic-addon4">
-            </div>
+
         </div>
         <div class="mb-3">
             {{-- is_done checkbox --}}
@@ -195,10 +195,10 @@
             </div>
         </div>
 
-        <div class="text-center mt-5">
+        <div class="text-center my-5">
             <button type="submit" class="btn btn-dark">
 
-                Modify "{{$project?->name}}"
+                {{ $action }} {{ "$project?->name"}}
             </button>
         </div>
     </form>
